@@ -1,0 +1,24 @@
+extends ../base
+
+block content
+  h3 Welcome to Ad Hub
+    small
+
+  .btn-group
+    a(href="/ads/#{ad.id}/edit", class='btn btn-primary btn-sm')
+      i.glyphicon.glyphicon-edit
+      span  Edit Advertisement
+    a(href="/ads/#{ad.id}/delete", class='btn btn-danger btn-sm')
+      i.glyphicon.glyphicon-trash
+      span  Delete Advertisement
+
+  .media
+    .media-left
+      img(src=ad.imageUrl || "http://placekitten.com/g/128/192")
+    .media-body
+      h4= ad.title
+        | &nbsp;
+        small= ad.publishedDate
+      h5 By #{ad.author||'unknown'}
+      p= ad.description
+      small Added by #{ad.createdBy}

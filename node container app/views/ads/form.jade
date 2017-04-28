@@ -1,0 +1,30 @@
+extends ../base
+
+block content
+  h3 #{action} Your Advertisement
+  form(method="POST", enctype="multipart/form-data")
+    .form-group
+      label(for="title") Title
+      input.form-control(type="text", name="title", id="title", value=ad.title)
+    .form-group
+      label(for="author") Owner
+      input.form-control(type="text", name="author", id="author", value=ad.author)
+    .form-group
+      label(for="publishedDate") Date Published
+      input.form-control(type="text", name="publishedDate", id="publishedDate", value=ad.publishedDate)
+    .form-group
+      label(for="description") Description
+      input.form-control(type="text", name="description", id="description", value=ad.description)
+    .form-group
+      label(for="image") Image
+      input.form-control(type="file", name="image", id="image")
+    .form-group.hidden
+      label(for="imageUrl") Image URL
+      input.form-control(type="text", name="imageUrl", id="imageUrl", value=ad.imageUrl)
+    .form-group.hidden
+      label(for="createdBy") Created by
+      input.form-control(type="text", name="createdBy", id="createdBy", value=ad.createdBy)
+    .form-group.hidden
+      label(for="createdById") Created by ID
+      input.form-control(type="text", name="createdById", id="createdById", value=ad.createdById)
+    button.btn.btn-success(type="submit") Save

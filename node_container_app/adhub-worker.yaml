@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: adhub-app
-        image: gcr.io/[GCLOUD_PROJECT]/adhub
+        image: gcr.io/superb-heaven-155622/adhub
         imagePullPolicy: Always
         env:
         - name: SCRIPT

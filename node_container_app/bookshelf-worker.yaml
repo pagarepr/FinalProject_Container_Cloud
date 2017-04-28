@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: adhub-worker
+  labels:
+    app: adhub
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: adhub
+        tier: worker
+    spec:
+      containers:
+      - name: adhub-app
+        image: gcr.io/[GCLOUD_PROJECT]/adhub
+        imagePullPolicy: Always
+        env:
+        - name: SCRIPT
+          value: worker.js
